@@ -1,0 +1,62 @@
+.container {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.printersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.printerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.printerItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.data {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Mobile-first: Two items per row */
+@media (max-width: 768px) {
+  .printersList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Very small screens: One item per row */
+@media (max-width: 480px) {
+  .printersList {
+    grid-template-columns: 1fr;
+  }
+}
